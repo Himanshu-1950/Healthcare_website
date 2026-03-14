@@ -1,207 +1,109 @@
 # Elderly Care Services Platform
 
-A comprehensive web-based platform connecting families with verified
-caregivers for elderly nursing and healthcare assistance services.
-
-------------------------------------------------------------------------
+A comprehensive web-based platform connecting families with verified caregivers for elderly nursing and healthcare assistance services.
 
 ## Features
 
-### For Families / Users
-
--   Secure user registration and login
--   Create patient profiles (age, medical needs)
--   Browse available healthcare services
--   View caregiver profiles with ratings and qualifications
--   Book caregivers (hourly, daily, long-term)
--   Track service status
--   View booking history
+### For Families/Users
+- Secure user registration and login
+- Create patient profiles (age, medical needs)
+- Browse available services:
+  - Nursing care
+  - Elderly attendant
+  - Physiotherapy
+  - Post-hospital care
+- View caregiver profiles, qualifications, and ratings
+- Book services (hourly/daily/long-term)
+- Track service status
+- View service history
 
 ### For Caregivers
+- Caregiver registration & verification
+- Manage availability and service areas
+- Accept or reject service requests
+- Update service status and care notes
+- View earnings and work history
 
--   Caregiver registration and verification
--   Manage availability and service location
--   Accept or reject service requests
--   Update service progress and notes
--   View earnings and completed work
-
-### For Admin
-
--   Verify caregiver profiles
--   Manage users and services
--   Handle complaints and disputes
--   Monitor platform analytics
-
-------------------------------------------------------------------------
+### For Admins
+- Verify and onboard caregivers
+- Manage users and service categories
+- Monitor service quality and complaints
+- Handle disputes and escalations
+- View analytics and reports
 
 ## Tech Stack
 
-Frontend - Next.js 14 - React - Tailwind CSS
+- **Frontend**: Next.js 14, React, Tailwind CSS
+- **Backend**: Next.js API Routes (Node.js)
+- **Database**: MongoDB with Mongoose
+- **Authentication**: JWT-based authentication
 
-Backend - Next.js API Routes - Node.js
+## Getting Started
 
-Database - MongoDB with Mongoose
+### Prerequisites
 
-Authentication - JWT Authentication
+- Node.js 18+
+- MongoDB (local or Atlas)
 
-------------------------------------------------------------------------
+### Installation
 
-## Prerequisites
-
-Before running the project, install:
-
--   Node.js (version 18 or higher)
--   MongoDB (local installation or MongoDB Atlas)
-
-------------------------------------------------------------------------
-
-## Installation & Running the Project
-
-### 1. Clone the Repository
-
-``` bash
-git clone https://github.com/Himanshu-1950/Healthcare_website.git
-cd Healthcare_website
+1. Clone the repository:
+```bash
+cd elderly-care-platform
 ```
 
-### 2. Install Dependencies
-
-``` bash
+2. Install dependencies:
+```bash
 npm install
 ```
 
-### 3. Environment Variables
+3. Configure environment variables:
+Create a `.env.local` file with:
+```env
+MONGODB_URI=your-mongodb-connection-string
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key
+JWT_SECRET=your-jwt-secret
+```
 
-Create a file named `.env.local` in the root folder.
-
-Example:
-
-    MONGODB_URI=your-mongodb-connection-string
-    NEXTAUTH_URL=http://localhost:3000
-    NEXTAUTH_SECRET=your-secret-key
-    JWT_SECRET=your-jwt-secret
-
-### Environment Variable Explanation
-
-MONGODB_URI\
-Connection string used to connect the application with MongoDB.
-
-NEXTAUTH_URL\
-Base URL of the application.
-
-NEXTAUTH_SECRET\
-Secret key used to encrypt authentication sessions.
-
-JWT_SECRET\
-Secret key used to generate JSON Web Tokens.
-
-------------------------------------------------------------------------
-
-### 4. Run the Development Server
-
-``` bash
+4. Run the development server:
+```bash
 npm run dev
 ```
 
-Open in browser:
-
-http://localhost:3000
-
-------------------------------------------------------------------------
-
-## User Registration Parameters
-
-Required fields:
-
-Name -- Full name of the user\
-Email -- Used for login\
-Phone -- Contact number\
-Password -- Secure login password
-
-Example:
-
-``` json
-{
-  "name": "Rahul Sharma",
-  "email": "rahul@email.com",
-  "phone": "9876543210",
-  "password": "password123"
-}
-```
-
-------------------------------------------------------------------------
-
-## Caregiver Registration Parameters
-
-Required fields:
-
-Name -- Caregiver full name\
-Email -- Login email\
-Phone -- Contact number\
-Qualification -- Medical certification\
-Experience -- Years of work experience\
-ServiceType -- Example: Nursing, Physiotherapy
-
-Example:
-
-``` json
-{
-  "name": "Priya Patil",
-  "email": "priya@email.com",
-  "phone": "9123456780",
-  "qualification": "BSc Nursing",
-  "experience": "3 years",
-  "serviceType": "Nursing Care"
-}
-```
-
-------------------------------------------------------------------------
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
-    src
-     ├── app
-     │   ├── api
-     │   ├── login
-     │   ├── register
-     │   ├── services
-     │   ├── caregivers
-     │   ├── bookings
-     │   ├── dashboard
-     │   ├── admin
-     │   ├── caregiver
-     │   ├── about
-     │   └── contact
-     │
-     ├── components
-     │   └── layout
-     │
-     └── lib
-         ├── db.js
-         └── models
-
-------------------------------------------------------------------------
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── api/              # API routes
+│   ├── login/            # Login page
+│   ├── register/         # Registration page
+│   ├── services/         # Services listing
+│   ├── caregivers/       # Caregivers listing
+│   ├── bookings/         # Booking pages
+│   ├── dashboard/        # User dashboard
+│   ├── admin/           # Admin dashboard
+│   ├── caregiver/       # Caregiver dashboard
+│   ├── about/           # About page
+│   └── contact/         # Contact page
+├── components/           # React components
+│   └── layout/          # Layout components
+└── lib/                 # Utility functions
+    ├── db.js            # MongoDB connection
+    └── models/          # Mongoose models
+```
 
 ## Available Scripts
 
-Start development server
-
-    npm run dev
-
-Build project
-
-    npm run build
-
-Start production server
-
-    npm run start
-
-Run ESLint
-
-    npm run lint
-
-------------------------------------------------------------------------
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
 ## License
 
-MIT License
+MIT
+

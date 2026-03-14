@@ -146,7 +146,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Link
+                <Link
                 key={index}
                 href={`/services/${service.slug}`}
                 className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300"
@@ -280,4 +280,3 @@ export default function Home() {
     </MainLayout>
   );
 }
-
